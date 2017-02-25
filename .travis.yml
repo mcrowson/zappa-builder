@@ -7,8 +7,8 @@ before-install:
   - docker pull lambci/lambda:build
 
 script:
-  - curl -Lo zappa.zip https://github.com/danielwhatmuff/zappa/archive/master.zip  && unzip zappa.zip
-  - cd zappa
+  - curl -Lo zappa.zip https://github.com/danielwhatmuff/zappa/archive/master.zip && unzip zappa.zip
+  - cd zappa-master
   - docker build -t mcrowson/zappa-builder .
 
 after_success:
