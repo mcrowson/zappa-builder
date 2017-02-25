@@ -5,10 +5,10 @@ services:
 
 before-install:
   - docker pull lambci/lambda:build
-  - curl -Lo zappa.zip https://github.com/danielwhatmuff/zappa/archive/master.zip  && unzip zappa.zip
-  - cd zappa
 
 script:
+  - curl -Lo zappa.zip https://github.com/danielwhatmuff/zappa/archive/master.zip  && unzip zappa.zip
+  - cd zappa
   - docker build -t mcrowson/zappa-builder .
 
 after_success:
