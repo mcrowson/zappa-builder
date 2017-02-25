@@ -1,0 +1,16 @@
+sudo: required
+
+services:
+  - docker
+
+before-install:
+  - docker pull lambci/lambda:build
+  - git clone https://github.com/danielwhatmuff/zappa.git
+  - cd zappa
+
+script:
+  - docker build -t mcrowson/zappa-builder .
+
+after_success:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push mcrowson/zappa-builder
