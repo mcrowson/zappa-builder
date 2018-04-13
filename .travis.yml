@@ -8,7 +8,7 @@ before-install:
 
 script:
   - curl -Lo zappa.zip https://github.com/mcrowson/zappa-1/archive/master.zip && unzip zappa.zip
-  - cd zappa-master
+  - cd zappa-1-master
   - docker build -t mcrowson/zappa-builder .
 
 after_success:
